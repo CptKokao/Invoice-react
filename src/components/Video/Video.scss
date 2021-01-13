@@ -1,0 +1,157 @@
+@import './src/sass/global/variables.scss';
+@import './src/sass/global/mixin.scss';
+
+.video {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 85px 175px;
+  margin-top: 130px;
+  color: #ffffff;
+
+  background: #000000 url("img/bg-video.webp") center no-repeat;
+  background-size: cover;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 81%;
+    height: 81%;
+    border: 1px solid salmon;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16%;
+    width: 1px;
+    height: 150px;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 85px 75px;
+
+    &::after {
+      height: 72%;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: 50px;
+    padding: 30px 0;
+
+    &::after {
+      top: 25px;
+      width: 90%;
+      height: 90%;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+/* если не поддерживается webp */
+.no-webp .video {
+  background: #000000 url("img/bg-video.jpg") center no-repeat;
+  background-size: cover;
+}
+
+
+.video__wrapper {
+  position: relative;
+  flex-direction: column;
+  padding: 18% 14% 16% 17%;
+  z-index: 10;
+
+  @media (max-width: 1200px) {
+    padding: 90px 120px 90px 220px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 50px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 20px 30px;
+  }
+
+  h2 {
+    @include h2--line;
+    width: 100%;
+    max-width: 600px;
+    color: #bea67c;
+    letter-spacing: 1px;
+
+    &::after {
+      top: 20%;
+      background-color: #ffffff;
+    }
+
+    @media (max-width: $tablet-width) {
+      max-width: 450px;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  p {
+    @include text-line;
+    width: 100%;
+    max-width: 525px;
+    margin-top: 42px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+
+    @media (max-width: $tablet-width) {
+      max-width: 450px;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.video__btn {
+  position: relative;
+  text-transform: uppercase;
+  margin-top: 15px;
+  padding-top: 23px;
+  padding-bottom: 20px;
+  padding-left: 110px;
+  letter-spacing: 3px;
+
+  @media (max-width: $mobile-width) {
+    width: 210px;
+    padding-left: 60px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 65px;
+    width: 25px;
+    height: 25px;
+    background-image: url("img/video.svg");
+  }
+
+  @media (max-width: $mobile-width) {
+    &::before {
+      left: 15px;
+    }
+  }
+}
