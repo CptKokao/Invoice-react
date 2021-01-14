@@ -1,6 +1,6 @@
 import './index.scss';
 
-import Slider from './components/Slider/Slider';
+import Slider from './components/Header/Slider/Slider';
 import Adv from './components/Adv/Adv';
 import About from './components/About/About';
 import Work from './components/Work/Work';
